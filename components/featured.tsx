@@ -37,7 +37,7 @@ const Featured = ({ handleGetMovies }: { handleGetMovies: (searchQuery: string) 
                 <Link href="/" className='text-bold text-primary flex items-center gap-2'>See More <span className='text-2xl'>{">"}</span></Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between items-center gap-8">
-                {isSuccess && data?.results?.map((movie) => (
+                {isSuccess && data?.results?.slice(0, 10).map((movie) => (
                     <Link href={`/movies/${movie.id}`} key={movie.id} className="flex flex-col gap-2" data-testid="movie-card">
                         <div className='relative'>
                             <Image

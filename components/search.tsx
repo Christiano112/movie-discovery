@@ -1,5 +1,6 @@
 "use client";
 
+import { useDebounce } from "@/utils/hooks";
 import { useState, CSSProperties, ChangeEvent, memo } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 
@@ -10,9 +11,10 @@ interface SearchInputType {
 
 const SearchInput = memo(({ onSearch, style }: SearchInputType) => {
     const [searchQuery, setSearchQuery] = useState<string>("");
+    const debouncedValue = useDebounce(searchQuery);
 
     const handleSearch = () => {
-        onSearch(searchQuery);
+        onSearch(debouncedValue);
     };
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -32,7 +34,7 @@ const SearchInput = memo(({ onSearch, style }: SearchInputType) => {
                         handleSearch();
                     }
                 }}
-                className="w-full py-2 pl-2 pr-8 text-sm rounded-md focus:ring-1 focus:ring-primary focus:outline-none focus:ring-opacity-50 border-[2px solid var(--gray-300, #D1D5DB)]"
+                className="w-full py-2 pl-2 pr-8 text-sm bg-transparent text-white placeholder:text-white rounded-md focus:ring-1 focus:ring-primary focus:outline-none focus:ring-opacity-50 border-2 border-[#D1D5DB]"
             />
             <AiOutlineSearch
                 className="absolute top-1/2 right-2 transform -translate-y-1/2 text-slate-400 cursor-pointer"

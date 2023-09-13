@@ -9,17 +9,17 @@ import LogOutIcon from "../public/logout-icon.png";
 
 const SideNav = () => {
     return (
-        <div className="hidden md:block max-w-[13rem] p-4 shadow-2xl relative h-full z-50 transition-all duration-150 ease-out md:ease-in">
-            <h2 className="text-primary font-bold text-4xl md:text-5xl mb-8 flex gap-2 items-center">
+        <div className="hidden md:block max-w-[13rem] p-4 shadow-2xl relative h-full z-50 transition-all duration-150 ease-out md:ease-in rounded-e-[3rem]">
+            <h2 className="text-primary font-bold text-xl md:text-3xl mb-12 mt-4 flex gap-2 items-center">
                 <span>
                     <Image src={TVImage} alt="tv image" />
                 </span>{" "}
                 MovieBox
             </h2>
-            <div className="flex flex-col gap-4 mb-8">
+            <div className="flex flex-col gap-12 mb-8 pl-2">
                 <Link
                     href="/"
-                    className="flex gap-2 items-center-50"
+                    className="flex gap-2 items-center"
                 >
                     <span>
                         <Image src={HomeIcon} alt="home icon" />
@@ -28,7 +28,7 @@ const SideNav = () => {
                 </Link>
                 <Link
                     href="/"
-                    className="flex gap-2 items-center-50"
+                    className="flex gap-2 items-center bg-[#BE123C33] text-primary-50 p-4 rounded-3xl -ml-4"
                 >
                     <span>
                         <Image src={MoviesIcon} alt="movie icon" />
@@ -37,7 +37,7 @@ const SideNav = () => {
                 </Link>
                 <Link
                     href="/"
-                    className="flex gap-2 items-center-50"
+                    className="flex gap-2 items-center"
                 >
                     <span>
                         <Image src={TVIcon} alt="tv icon" />
@@ -46,7 +46,7 @@ const SideNav = () => {
                 </Link>
                 <Link
                     href="/"
-                    className="flex gap-2 items-center-50"
+                    className="flex gap-2 items-center"
                 >
                     <span>
                         <Image src={CalendarIcon} alt="calendar icon" />
@@ -54,23 +54,23 @@ const SideNav = () => {
                     Upcoming
                 </Link>
             </div>
-            <div className="flex flex-col gap-4 mb-8">
-                <h3 className="flex gap-2 items-center text-xl font-medium">
+            <div className="flex flex-col gap-4 my-12 bg-[#F8E7EB66] rounded-2xl p-4">
+                <h3 className="flex gap-2 items-center text-lg font-medium">
                     Play movie quizes
                     and earn
                     free tickets
                 </h3>
-                <p>50k people are playing
+                <p className="text-md text-[#666666]">50k people are playing
                     now</p>
-                <Link href="/" className="text-tertiary-50">
+                <Link href="/" className="bg-[#BE123C33] text-primary-50 rounded-3xl p-2 flex items-center justify-center">
                     Start playing
                 </Link>
             </div>
             <div className="flex flex-col gap-4 mb-8">
-                <div className="justify-end bottom-0 absolute right-0 left-0 p-4 mb-[-1rem]">
+                <div className="justify-end bottom-0 absolute right-0 left-0 p-4">
                     <Link
                         href="/"
-                        className="flex gap-2 items-center-50"
+                        className="flex gap-2 items-center"
                     >
                         <span>
                             <Image src={LogOutIcon} alt="logout icon" />

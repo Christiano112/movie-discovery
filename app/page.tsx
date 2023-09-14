@@ -27,15 +27,15 @@ const Home = () => {
       >
         <header className='flex items-center justify-between gap-6 py-2 px-8'>
           <Link href="/" className="text-white font-bold text-xl md:text-2xl flex gap-2 items-center">
-            <span>
               <Image src={TVImage} alt="tv image" className='h-8 w-8' />
-            </span>{" "}
+            <span className='hidden md:block'>
             MovieBox
+            </span>
           </Link>
           <div className='flex-grow max-w-lg'>
             <SearchInput onSearch={handleSearch} />
           </div>
-          <Link href="/" className="text-white font-bold text-lg flex gap-2 items-center">
+          <Link href="/" className="text-white font-bold text-lg hidden md:flex gap-2 items-center">
             Sign In
             <span className='rounded-full p-1 bg-primary'>
               <Image src={MenuIcon} alt="menu icon" className='h-4 w-4' />

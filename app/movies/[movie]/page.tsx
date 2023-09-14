@@ -14,8 +14,7 @@ import { convertToUTC } from '@/utils/format';
 
 const Movie = () => {
     const movieId = usePathId();
-    const { data: movie, error, isLoading, isSuccess } = useGetSingleMovie(movieId);
-    console.log(movie);
+    const { data: movie, isLoading, isSuccess } = useGetSingleMovie(movieId);
 
     if (isLoading) {
         return <Loading />;

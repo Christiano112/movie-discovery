@@ -10,11 +10,10 @@ import Loading from '@/app/loading';
 import { MovieType } from '@/utils/types';
 
 const Featured = ({ handleGetMovies }: { handleGetMovies: (searchQuery: string) => void }) => {
-    const { data, error, isLoading, isSuccess } = useGetMovies();
-    const { data: genreData, error: genreError, isSuccess: genreSuccess } = useGetMovieGenre();
+    const { data, isLoading, isSuccess } = useGetMovies();
+    const { data: genreData, isSuccess: genreSuccess } = useGetMovieGenre();
     const { mutateAsync: getMovies } = useSearchMovies();
     const [movies, setMovies] = React.useState<MovieType[]>(data?.results!);
-    console.log(data);
 
     handleGetMovies = async (searchQuery: string) => {
         console.log(searchQuery);
